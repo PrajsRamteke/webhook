@@ -1,8 +1,5 @@
 /** @format */
 
-// forai.js
-/** @format */
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -66,7 +63,7 @@ app.post("/webhook", async (req, res) => {
     const webhookData = req.body;
 
     // Validate request body
-    const requiredFields = ["id", "created"]; // Add other required fields as needed
+    const requiredFields = ["id", "created", "waId", "text"]; // Add other required fields as needed
     const isValidWebhook = requiredFields.every((field) =>
       Object.prototype.hasOwnProperty.call(webhookData, field)
     );
